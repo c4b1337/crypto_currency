@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_web_project/screens/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -20,31 +21,31 @@ class WelcomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 80.0),
                 child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Crypt',
-                      style: TextStyle(
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Crypt',
+                        style: TextStyle(
+                          fontSize: 60,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: 'X',
-                      style: TextStyle(
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                      TextSpan(
+                        text: 'X',
+                        style: TextStyle(
+                          fontSize: 60,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                            ),
               ),
-          
+
               const SizedBox(height: 40),
-          
+
               // Logo
               Container(
                 height: 300,
@@ -53,12 +54,12 @@ class WelcomeScreen extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-          
+
               const SizedBox(height: 40),
-          
-              // Subtitle 
+
+              // Subtitle
               const Text(
-                'Jump start your\ncrypto portfolio', 
+                'Jump start your\ncrypto portfolio',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 32,
@@ -66,10 +67,10 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-          
+
               const SizedBox(height: 16),
-          
-              // Descriptive text 
+
+              // Descriptive text
               const Text(
                 'Take your investment portfolio to next level',
                 textAlign: TextAlign.center,
@@ -78,20 +79,22 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.white70,
                 ),
               ),
-          
+
               const SizedBox(height: 40),
-          
+
               // "Get Started" Button
               ElevatedButton(
                 onPressed: () {
-                  //TODO: Add your navigation logic here
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => CryptoListScreen ()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF6C63FF), 
+                  backgroundColor: const Color(0xFF6C63FF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 16), 
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 60, vertical: 16),
                 ),
                 child: const Text(
                   'Get Started',
